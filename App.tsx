@@ -48,11 +48,16 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 export default class ProjetoAPPCalculadora extends Component {
 
+  constructor(props) {
+        super(props);
+        this.state = {r:'0'};
+  }
+
   render() {
     return (
       <View style={styles.body}>
           <View style={styles.linha}>
-            <Text></Text>
+            <Text style={styles.res}>{this.state.r}</Text>
           </View>
           <View style={styles.linha}>
               <Botao c="3" n="C" bg="#CCC" />
@@ -94,5 +99,12 @@ const styles = StyleSheet.create({
   linha:{
     flex:1,
     flexDirection:'row',
+  },
+  res:{
+    backgroundColor:'#000',
+    color:'#FFF',
+    fontSize:50,
+    flex:1,
+    textAlign: 'right',
   }
 });
